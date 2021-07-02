@@ -136,7 +136,8 @@
           <el-table-column type="selection" width="50" align="center" />
           <el-table-column label="用户编号" align="center" prop="userId" />
           <el-table-column label="用户名称" align="center" prop="userName" :show-overflow-tooltip="true" />
-          <el-table-column label="用户昵称" align="center" prop="nickName" :show-overflow-tooltip="true" />
+          <el-table-column label="姓名" align="center" prop="fullName" :show-overflow-tooltip="true" />
+          <!-- <el-table-column label="用户昵称" align="center" prop="nickName" :show-overflow-tooltip="true" /> -->
           <el-table-column label="部门" align="center" prop="dept.deptName" :show-overflow-tooltip="true" />
           <el-table-column label="手机号码" align="center" prop="phonenumber" width="120" />
           <el-table-column label="状态" align="center">
@@ -201,9 +202,14 @@
     <el-dialog :title="title" :visible.sync="open" width="600px" append-to-body>
       <el-form ref="form" :model="form" :rules="rules" label-width="80px">
         <el-row>
-          <el-col :span="12">
+          <!-- <el-col :span="12">
             <el-form-item label="用户昵称" prop="nickName">
               <el-input v-model="form.nickName" placeholder="请输入用户昵称" />
+            </el-form-item>
+          </el-col> -->
+          <el-col :span="12">
+            <el-form-item label="姓名" prop="fullName">
+              <el-input v-model="form.fullName" placeholder="请输入姓名" />
             </el-form-item>
           </el-col>
           <el-col :span="12">
@@ -415,8 +421,11 @@ export default {
         userName: [
           { required: true, message: "用户名称不能为空", trigger: "blur" }
         ],
-        nickName: [
-          { required: true, message: "用户昵称不能为空", trigger: "blur" }
+        // nickName: [
+        //   { required: true, message: "用户昵称不能为空", trigger: "blur" }
+        // ],
+        fullName: [
+          { required: true, message: "用户姓名不能为空", trigger: "blur" }
         ],
         deptId: [
           { required: true, message: "归属部门不能为空", trigger: "blur" }
@@ -515,7 +524,8 @@ export default {
         userId: undefined,
         deptId: undefined,
         userName: undefined,
-        nickName: undefined,
+        // nickName: undefined,
+        fullName:undefined,
         password: undefined,
         phonenumber: undefined,
         email: undefined,
