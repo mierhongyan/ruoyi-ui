@@ -1,6 +1,6 @@
 import request from '@/utils/request'
 
-//查询文件夹列表
+//查询文件夹列表，仿照dept.js
 var gszkApi = 'https://451449a3-682b-4aa5-aae0-cd315758048d.mock.pstmn.io';
 export function treeselect(query) {
     return request({
