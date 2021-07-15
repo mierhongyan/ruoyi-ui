@@ -92,6 +92,20 @@ export const constantRoutes = [
       }
     ]
   },
+  //这里建立的创建报告的路由。开启全新的路由路径
+  {
+    path: '/documents',
+    component: Layout,
+    hidden: true,
+    children: [
+      {
+        path: 'docList/create',
+        component: (resolve) => require(['@/views/documents/docList/create/index'], resolve),
+        name: 'createDocuments',
+        meta: { title: '创建报告', icon: '' }
+      }
+    ]
+  },
   {
     path: '/job',
     component: Layout,
